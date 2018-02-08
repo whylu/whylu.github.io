@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel=stylesheet type="text/css" href="./css/mine.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="#why" class="w3-bar-item w3-button w3-padding-large w3-hide-small">WHY</a>
+    <a href="#how" class="w3-bar-item w3-button w3-padding-large w3-hide-small">HOW</a>
+ 
+	<a target="_blank" href="https://www.cardanohub.org" class="w3-padding-large w3-right" style="padding: 12px 12px 6px 12px!important;">
+	  <img  src="./resources/logo-cardano.svg" class="official-logo svg social-link" style="width: 28px!important;height: 26px!important;">
+	</a>
+    <a target="_blank" href="https://www.facebook.com/groups/ada.tw/" class="w3-padding-large w3-right" style="padding: 12px 12px!important;"><i class="fa fa-facebook-official"></i></a>
+  </div>
+</div>
+
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#why" class="w3-bar-item w3-button w3-padding-large">WHY</a>
+  <a href="#how" class="w3-bar-item w3-button w3-padding-large">HOW</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <!-- Automatic Slideshow Images -->
+  <div class="mySlides w3-display-container w3-center" style="padding-top: 55px">
+	  
+	<img id="logo" src="./resources/logo-cardano_2.svg" class="svg social-link" style="width: 164px;height: 160px; display: none">
+  </div>
+
+  <!-- The why Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="why">
+    <h2 class="w3-wide">Cardano幣權託管中心</h2>
+    <p class="w3-opacity"><i>一支竹筷容易被折斷，但如果是十支竹筷呢...</i></p>
+    <p class="w3-justify">
+	
+	
+	  
+	  
+	<div class="w3-col m12">
+		<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+		<form id="emailForm" method="post" action="https://script.google.com/macros/s/AKfycbyRjeGy1Nw6defzyix396I5b6iS1KyGSjkr_hlYHRH2gWtwoc6y/exec" 
+			target="hidden_iframe">
+		  <div class="w3-col m9" style="padding-left: 15%;">
+			<input class="w3-input w3-border" id="email" type="email"  placeholder="Email" required name="Email" style="padding-left=20px;">
+		  </div>
+		  <div class="w3-col m1">
+			<button id="submit-form" class="w3-button w3-border w3-left" type="submit">訂閱通知</button>
+		  </div>
+			
+		</form>
+	</div>
+	  
+	  
+  </div>
+	
+
+  <!-- The Contact Section -->
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="why">
+    <h2 class="w3-wide w3-center">WHY</h2>
+      <p class="w3-opacity w3-center"><i>這94團結的力量</i></p><br>
+	  <p class="w3-justify">
+		有別於比特幣的Proof of Work(POW)機制，Cardano使用Proof of Stake(POS)來決定區塊共識。
+		佔有一定數量(可能是大於0.5%或1%$)的幣權佔有者，將會被隨機選中成為區塊製造者，在一個時間片段內，擔任產生區塊的角色。
+		為了有機會被選為區塊製造者，幣權佔有者必需隨時開著錢包(Daedalus)，造成能源的浪費。
+		Cardano提供了Ouroboro delegation機制，讓幣權佔有者可以把幣權委託給礦池，讓礦池可以代替幣權佔有者進行挖礦，並在穫利後配發獎勵到幣權佔有者的錢包
+		
+		
+		
+	  </p>
+			  
+  </div>
+  
+  
+
+  <!-- The Contact Section -->
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="how">
+    <h2 class="w3-wide w3-center">HOW</h2>
+      <p class="w3-opacity w3-center"><i>這94團結的力量</i></p><br>
+	  <p class="w3-justify">
+		Coming soon...
+	  </p>
+			  
+  </div>
+  
+  <!-- Ticket Modal -->
+  <div id="ticketModal" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-teal w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('ticketModal').style.display='none'" 
+       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
+      </header>
+      <div class="w3-container">
+        <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="How many?">
+        <p><label><i class="fa fa-user"></i> Send To</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="Enter email">
+        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
+        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
+        <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
+      </div>
+    </div>
+  </div>
+
+  
+<!-- End Page Content -->
+</div>
+
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+  <a target="_blank" href="https://www.facebook.com/groups/ada.tw/">
+	<i class="fa fa-facebook-official w3-hover-opacity"></i>
+  </a>
+  <!-- 
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  -->
+  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  
+</footer>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+</script>
+<script src="./js/mine.js"></script>
+</body>
+</html>

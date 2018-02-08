@@ -1,0 +1,52 @@
+
+
+body {
+	background-color: #0b1e2c;
+	    color: #999!important;
+}
+.w3-text-white, .w3-hover-text-white:hover {
+    color: #999!important;
+}
+.w3-black, .w3-hover-black:hover {
+    color: #eee!important;
+    background-color: #0b1e2c!important;
+    border-bottom: 1px solid #409c9e;
+}
+
+#logo line {
+	stroke: #999;
+}
+.social-link path {
+    fill: #999;
+}
+
+.w3-button:hover {
+    color: #000!important;
+    background-color: #28516f!important;
+}
+
+.navbar-header {
+    background: #0b1e2c;
+    border-bottom: 1px solid #409c9e;
+}
+
+.w3-padding-64 {
+    padding-top: 31px!important;
+    padding-bottom: 64px!important;
+}
+
+svg.official-logo {
+	width: 26px;
+	height: 22px;
+}
+
+#emailForm .w3-col.m9 {
+	width: 66%;
+}
+#emailForm .w3-col.m1 {
+	width: 20%;
+}
+
+.w3-justify {
+    padding: 0px 34px;
+}
