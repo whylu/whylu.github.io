@@ -51,9 +51,6 @@ body {font-family: "Lato", sans-serif}
     <p class="w3-opacity"><i>一支竹筷容易被折斷，但如果是十支竹筷呢...</i></p>
     <p class="w3-justify">
 	
-	
-	  
-	  
 	<div class="w3-col m12">
 		<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 		<form id="emailForm" method="post" action="https://script.google.com/macros/s/AKfycbyRjeGy1Nw6defzyix396I5b6iS1KyGSjkr_hlYHRH2gWtwoc6y/exec" 
@@ -64,10 +61,12 @@ body {font-family: "Lato", sans-serif}
 		  <div class="w3-col m1">
 			<button id="submit-form" class="w3-button w3-border w3-left" type="submit">訂閱通知</button>
 		  </div>
-			
+		  <br>
 		</form>
+		
 	</div>
 	  
+			請留下您的Email，我們將在礦池上線時通知您。
 	  
   </div>
 	
@@ -78,9 +77,10 @@ body {font-family: "Lato", sans-serif}
       <p class="w3-opacity w3-center"><i>這94團結的力量</i></p><br>
 	  <p class="w3-justify">
 		有別於比特幣的Proof of Work(POW)機制，Cardano使用Proof of Stake(POS)來決定區塊共識。
-		佔有一定數量(可能是大於0.5%或1%$)的幣權佔有者，將會被隨機選中成為區塊製造者，在一個時間片段內，擔任產生區塊的角色。
-		為了有機會被選為區塊製造者，幣權佔有者必需隨時開著錢包(Daedalus)，造成能源的浪費。
-		Cardano提供了Ouroboro delegation機制，讓幣權佔有者可以把幣權委託給礦池，讓礦池可以代替幣權佔有者進行挖礦，並在穫利後配發獎勵到幣權佔有者的錢包
+		擁有越多的幣權，就有越大的機會成為<strong>區塊製造者</strong>，在一個時間片段內，負責產生區塊的工作，並得到獎勵。
+		<br>
+		Cardano提供了<strong>幣權委託</strong>機制，讓幣權佔有者可以把幣權委託給礦池，讓礦池可以代替幣權佔有者進行挖礦，並在穫利後配發獎勵到幣權佔有者的錢包。
+		<br>
 		
 		
 		
@@ -93,9 +93,32 @@ body {font-family: "Lato", sans-serif}
   <!-- The Contact Section -->
   <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="how">
     <h2 class="w3-wide w3-center">HOW</h2>
-      <p class="w3-opacity w3-center"><i>這94團結的力量</i></p><br>
+      <p class="w3-opacity w3-center"><i>Cardano結算層的真相</i></p><br>
 	  <p class="w3-justify">
-		Coming soon...
+在Cardano的電子錢包(Daedalus)存在兩個不同的概念—<strong>存款(balance)</strong>和<strong>幣權(stake)</strong>。<br>
+當你安裝了Daedalus，並且把ADA匯到這個錢包，那這些ADA幣就是你錢包裡的存款，比如說100顆ADA幣。<br>
+而<strong>幣權</strong>代表的是你在Cardano結算層(Cardano SL)裡的金融權力。
+擁有越多的幣權代表可以有越多的影響力，去影響Cardano結算層裡的許多共識，例如有更多的投票權，用來選出區塊製造者，或是決定是否接受更新系統。<br>
+對於Cardano結算層而言，每一個ADA代表一枚存款與一個幣權。也就是說，一顆ADA幣等同一個幣權。
+<br>
+<br>
+
+事實上，Cardano結算層使用FTS演算法來選出區塊製造者。
+選出區塊製造者的方式，是在所有參與選舉的ADA幣當中，隨機挑中一個ADA幣(我們先假設只選出一個區塊製造者)，那麼擁有這個ADA幣的運算結點，就是這次的區塊製造者。
+因此，一個node要成為一個區塊製造者，必須滿足以下所有的條件:
+1. 該node必須在線上，參加選舉； 2. 該node必須有幣權參與選舉
+<br>		
+然而，如果每一個人都參加選舉，對系統而言是很沒有效率的事，也會浪費許多電力。透過幣權委託，可以將自己的幣權委託給另一個人，由他代替你進行這些工作。
+<br>		
+<br>		
+**** 請注意 ****
+<br>		
+幣權委託不代表轉移你的ADA存款，你所擁有的ADA幣從來沒有離開你的錢包，你只是把屬於你的幣權委託給另一個人。
+<br>		
+更多詳細說明，請參考
+<a target="_blank" href="https://cardanodocs.com/technical/delegation/"  >
+	  <img  src="./resources/logo-cardano.svg" class="official-logo svg social-link" style="width: 17px!important;height: 14px!important;">
+	</a>
 	  </p>
 			  
   </div>
