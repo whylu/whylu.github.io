@@ -33,3 +33,22 @@
 
         });
 		
+		
+		var n=0;
+		function resend() {
+			if(++n%3==0) {
+				$(".thxmsg").slideToggle(true);
+				
+				setTimeout(function(){
+					$(".thxmsg").slideToggle(false);
+				}, 2500);
+				return;
+			}
+			setTimeout(function(){
+				$("#emailForm").submit();
+			}, 1000);
+		}
+		function subbmit() {
+			resend();
+			return true;
+		}

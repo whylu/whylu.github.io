@@ -8,6 +8,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
 <link rel=stylesheet type="text/css" href="./css/mine.css">
 <style>
 body {font-family: "Lato", sans-serif}
@@ -51,15 +55,20 @@ body {font-family: "Lato", sans-serif}
     <p class="w3-opacity"><i>一支竹筷容易被折斷，但如果是十支竹筷呢...</i></p>
     <p class="w3-justify">
 	
+<div class="alert alert-success thxmsg" >
+  <strong>感謝訂閱!</strong>
+</div>
+	
 	<div class="w3-col m12">
 		<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
 		<form id="emailForm" method="post" action="https://script.google.com/macros/s/AKfycbyRjeGy1Nw6defzyix396I5b6iS1KyGSjkr_hlYHRH2gWtwoc6y/exec" 
-			target="hidden_iframe">
+			target="hidden_iframe" onsubmit="return subbmit()">
 		  <div class="w3-col m9" style="padding-left: 15%;">
 			<input class="w3-input w3-border" id="email" type="email"  placeholder="Email" required name="Email" style="padding-left=20px;">
 		  </div>
 		  <div class="w3-col m1">
-			<button id="submit-form" class="w3-button w3-border w3-left" type="submit">訂閱通知</button>
+			<button id="submit-form" class="w3-button w3-border w3-left" type="submit" >訂閱通知</button>
 		  </div>
 		  <br>
 		</form>
