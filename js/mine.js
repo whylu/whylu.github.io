@@ -49,6 +49,9 @@
 			}, 1000);
 		}
 		function subbmit() {
-			resend();
-			return true;
+            $(".thxmsg").slideToggle(true);
+            setTimeout(function(){
+                $(".thxmsg").slideToggle(false);
+            }, 2500);
+            return true;
 		}
