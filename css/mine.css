@@ -1,9 +1,9 @@
 .thxmsg {
 	width: 100%;
-    position: absolute;
-    left: 0;
-    top: 44px;
 	display: none;
+    color: #0b1e2c;
+    background-color: #28516f;
+    border: 1px solid #409c9e;
 }
 
 body {
