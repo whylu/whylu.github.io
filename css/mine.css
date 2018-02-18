@@ -1,9 +1,9 @@
 .thxmsg {
 	width: 100%;
 	display: none;
-    color: #0b1e2c;
+    color: #2cfbff;
     background-color: #28516f;
-    border: 1px solid #409c9e;
+    border: 1px solid #2cfbff;
 }
 
 body {
@@ -55,4 +55,21 @@ svg.official-logo {
 
 .w3-justify {
     padding: 0px 34px;
+}
+
+
+.w3-striped tbody tr:nth-child(even) {
+    background-color: #0b1e2c; 
+}
+.w3-bordered tr, .w3-table-all tr {
+    border-bottom: 1px solid #555;
+}
+
+
+
+#delegateAddressForm .w3-col.m9 {
+	width: 66%;
+}
+#delegateAddressForm .w3-col.m1 {
+	width: 20%;
 }

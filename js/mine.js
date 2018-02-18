@@ -32,26 +32,58 @@
             }, 'xml');
 
         });
-		
-		
-		var n=0;
-		function resend() {
-			if(++n%3==0) {
-				$(".thxmsg").slideToggle(true);
-				
-				setTimeout(function(){
-					$(".thxmsg").slideToggle(false);
-				}, 2500);
-				return;
-			}
-			setTimeout(function(){
-				$("#emailForm").submit();
-			}, 1000);
-		}
-		function subbmit() {
-            $(".thxmsg").slideToggle(true);
-            setTimeout(function(){
-                $(".thxmsg").slideToggle(false);
-            }, 2500);
-            return true;
-		}
+
+var messageBlock = new Vue({
+  el: '#messageBlock', 
+  data: {
+      message: ""
+  },
+  methods: {
+      info: function(msg){
+          messageBlock.message = msg;
+          $("#messageBlock").show()
+          setTimeout(function(){
+              $("#messageBlock").slideUp()
+          }, 2500);
+      }
+  }
+});
+
+var copyToClipboard = new Vue({
+  el: '#delegateAddressForm', 
+  methods: {
+      copyToClipboard: function(event){
+          var delegateAddress = document.getElementById("delegateAddress");
+          delegateAddress.select();
+          document.execCommand("Copy");
+          messageBlock.info("Address copied.")
+      }
+  }
+});
+
+
+
+
+var summry = new Vue({
+    el: "#summry",
+    data: {
+        stakeTotal: null,
+        reliabilityRecent_block: null,
+        reliabilityRecent_slot: null,
+        reliabilityTotal_block: null,
+        reliabilityTotal_slot: null,
+        stakeHolders: null,
+        issuance: null,
+        blocks: null
+        
+    }, 
+    created: function(){
+        var request = {"name": "summary"};
+        dataUtils.fetch(request).then(function(result){
+            console.log(result);
+            for(var key in result) {
+                summry[key] = result[key];
+            }
+        });
+    }
+});

@@ -33,6 +33,11 @@ body {font-family: "Lato", sans-serif}
 	</a>
     <a target="_blank" href="https://www.facebook.com/groups/ada.tw/" class="w3-padding-large w3-right" style="padding: 12px 12px!important;"><i class="fa fa-facebook-official"></i></a>
   </div>
+  
+  
+    <div class="alert alert-success w3-center thxmsg" id="messageBlock">
+      <span >{{message}}</span>
+    </div>
 </div>
 
 <!-- Navbar on small screens -->
@@ -63,15 +68,15 @@ body {font-family: "Lato", sans-serif}
 	
 	<div class="w3-col m12">
 
-		<form id="delegateAddressForm" >
+		<div id="delegateAddressForm" >
 		  <div class="w3-col m9" style="padding-left: 15%;">
 			<input class="w3-input w3-border" id="delegateAddress" readonly style="padding-left=20px;" value="DdzFFzCqrhswXaSye8HhBt9fEx8TJmgjfon3aPvYefZgBVgUShCVn3RNFLP14XWJBnAJo6LG78TYw4xtKYe573ziPRL85WuCtQpfTw2j">
 		  </div>
 		  <div class="w3-col m1">
-			<button class="w3-button w3-border w3-left">複製</button>
+			<button class="w3-button w3-border w3-left" v-on:click="copyToClipboard">複製</button>
 		  </div>
 		  <br>
-		</form>
+		</div>
 		
 	</div>
 	  
@@ -80,7 +85,7 @@ body {font-family: "Lato", sans-serif}
     
     
 
-    <div class="w3-row-padding">
+    <div class="w3-row-padding" id="summry">
         <div class="w3-half">
         
             <div class="w3-responsive ">
@@ -89,15 +94,23 @@ body {font-family: "Lato", sans-serif}
                     <tbody>
                         <tr>
                           <td>Stake</td>
-                          <td>{{stake}}</td>
+                          <td>{{stakeTotal}} ({{Math.round(stakeTotal/supplyTotal*100000)/1000}}%)</td>
+                          <!--
+                          <td>{{stake}}</td> -->
                         </tr>
                         <tr>
-                          <td>Reliability</td>
-                          <td>{{reliability}}</td>
+                          <td>Recent Reliability</td>
+                          <td>{{reliabilityRecent_block}}/{{reliabilityRecent_slot}} ({{Math.round(reliabilityRecent_block/reliabilityRecent_slot*10000)/100}}%)</td>
+                          <!--
+                          <td>{{reliabilityRecent}}</td>
+                          -->
                         </tr>
                         <tr>
-                          <td>Adam</td>
-                          <td>Johnson</td>
+                          <td>Total Reliability</td>
+                          <td>{{reliabilityTotal_block}}/{{reliabilityTotal_slot}} ({{Math.round(reliabilityTotal_block/reliabilityTotal_slot*10000)/100}}%)</td>
+                          <!--
+                          <td>{{reliabilityTotal}}</td>
+                          -->
                         </tr>
                     </tbody>
                 </table>
@@ -108,19 +121,21 @@ body {font-family: "Lato", sans-serif}
         
             <div class="w3-responsive ">
                 <table class="w3-table w3-striped w3-bordered">
-
                     <tbody>
                         <tr>
-                          <td>Stake</td>
-                          <td>{{stake}}</td>
+                          <td>Stakeholders</td>
+                          <td>{{stakeHolders}}</td>
                         </tr>
                         <tr>
-                          <td>Reliability</td>
-                          <td>{{reliability}}</td>
+                          <td>Issuance</td>
+                          <td>{{issuance}}</td>
+                          <!--
+                          <td>{{fee}}</td>
+                          -->
                         </tr>
                         <tr>
-                          <td>Adam</td>
-                          <td>Johnson</td>
+                          <td>Blocks</td>
+                          <td>{{blocks}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -263,6 +278,8 @@ window.onclick = function(event) {
 
 
 </script>
+<script src="./js/dataUtils.js"></script>
 <script src="./js/mine.js"></script>
+
 </body>
 </html>
