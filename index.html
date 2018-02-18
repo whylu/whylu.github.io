@@ -11,7 +11,6 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
 
 <link rel=stylesheet type="text/css" href="./css/mine.css">
 <style>
@@ -50,84 +49,36 @@ body {font-family: "Lato", sans-serif}
 	<img id="logo" src="./resources/logo-cardano_2.svg" class="svg social-link" style="width: 164px;height: 160px; display: none">
   </div>
 
-  
-
-
-
   <!-- The why Section -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="why">
     <h2 class="w3-wide">Cardano幣權託管中心</h2>
-    <p class="w3-opacity"><i>複製，貼上，就是這麼簡單</i></p>
+    <p class="w3-opacity"><i>一支竹筷容易被折斷，但如果是十支竹筷呢...</i></p>
     <p class="w3-justify">
 	
 	
 	<div class="w3-col m12">
+		<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
-		<form id="delegateAddressForm" >
+		<form id="emailForm" method="post" action="https://script.google.com/macros/s/AKfycbyRjeGy1Nw6defzyix396I5b6iS1KyGSjkr_hlYHRH2gWtwoc6y/exec" 
+			target="hidden_iframe" onsubmit="return subbmit()">
 		  <div class="w3-col m9" style="padding-left: 15%;">
-			<input class="w3-input w3-border" id="delegateAddress" readonly style="padding-left=20px;" value="DdzFFzCqrhswXaSye8HhBt9fEx8TJmgjfon3aPvYefZgBVgUShCVn3RNFLP14XWJBnAJo6LG78TYw4xtKYe573ziPRL85WuCtQpfTw2j">
+			<input class="w3-input w3-border" id="email" type="email"  placeholder="Email" required name="Email" style="padding-left=20px;">
 		  </div>
 		  <div class="w3-col m1">
-			<button class="w3-button w3-border w3-left">複製</button>
+			<button id="submit-form" class="w3-button w3-border w3-left" type="submit" >訂閱通知</button>
 		  </div>
 		  <br>
 		</form>
 		
 	</div>
 	  
+			請留下您的Email，我們將在礦池上線時通知您。
+	  
+<div class="alert alert-success thxmsg" >
+  <strong>感謝訂閱!</strong>
+</div>
   </div>
 	
-    
-    
-
-    <div class="w3-row-padding">
-        <div class="w3-half">
-        
-            <div class="w3-responsive ">
-                <table class="w3-table w3-striped w3-bordered">
-
-                    <tbody>
-                        <tr>
-                          <td>Stake</td>
-                          <td>{{stake}}</td>
-                        </tr>
-                        <tr>
-                          <td>Reliability</td>
-                          <td>{{reliability}}</td>
-                        </tr>
-                        <tr>
-                          <td>Adam</td>
-                          <td>Johnson</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
-        <div class="w3-half">
-        
-            <div class="w3-responsive ">
-                <table class="w3-table w3-striped w3-bordered">
-
-                    <tbody>
-                        <tr>
-                          <td>Stake</td>
-                          <td>{{stake}}</td>
-                        </tr>
-                        <tr>
-                          <td>Reliability</td>
-                          <td>{{reliability}}</td>
-                        </tr>
-                        <tr>
-                          <td>Adam</td>
-                          <td>Johnson</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
-    </div>
 
   <!-- The Contact Section -->
   <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="why">

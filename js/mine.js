@@ -68,6 +68,7 @@ var summry = new Vue({
     el: "#summry",
     data: {
         stakeTotal: null,
+        supplyTotal: null,
         reliabilityRecent_block: null,
         reliabilityRecent_slot: null,
         reliabilityTotal_block: null,
@@ -80,7 +81,6 @@ var summry = new Vue({
     created: function(){
         var request = {"name": "summary"};
         dataUtils.fetch(request).then(function(result){
-            console.log(result);
             for(var key in result) {
                 summry[key] = result[key];
             }
