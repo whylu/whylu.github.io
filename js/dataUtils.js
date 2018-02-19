@@ -61,4 +61,16 @@ function dummyResponse(request) {
             blocks: 4255
         }
     }
+    if(request.name=="summaryChart") {
+        var data = [];
+        for(var i=0; i<50; i++) {
+            var value = 100+ parseInt(Math.random()*100);
+            data.push({
+                time: moment().add(-i*5, 'm').valueOf(),
+                block: value,
+                slot: Math.random()*2>1? value+2 : value
+            })
+        }
+        return data;
+    }
 }

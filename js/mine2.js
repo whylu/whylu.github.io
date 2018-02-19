@@ -91,3 +91,121 @@ var summry = new Vue({
         });
     }
 });
+
+var summaryChart = new Vue({
+    el: "#summaryChart",
+    created: function(){
+        var request = {"name": "summaryChart"};
+        var config = createConfig();
+        dataUtils.fetch(request).then(function(result){
+            result.forEach(function(item){
+                config.data.labels.push(moment(item.time).format());
+                config.data.datasets[0].data.push( parseInt(item.block/item.slot*10000)/100 );
+                config.data.datasets[1].data.push(item.block);
+            });
+            setTimeout(function(){
+                var ctx = document.getElementById("summaryChart").getContext("2d");
+                new Chart(ctx, config);
+            })
+                
+        });
+        
+        
+        
+        function randomScalingFactor () {
+            return Math.round(Math.random()*100);
+        };
+		function newDate(days) {
+			return moment().add(days, 'd').toDate();
+		}
+
+		function newDateString(days) {
+			return moment().add(days, 'd').format();
+		}
+
+        
+        function createConfig() {
+            var chartColors = ['#37a062', '#337ab7'];
+            var config = {
+                type: 'bar',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        type: 'line',
+                        label: "Reliability",
+                        backgroundColor: Chart.helpers.color(chartColors[0]).alpha(0.5).rgbString(),
+                        borderColor: chartColors[0],
+                        borderWidth: 1,
+                        fill: false,
+                        pointRadius: 1.2,
+                        yAxisID: 'A',
+                        data: [],
+                    }, {
+                        type: 'bar',
+                        label: "Blocks Produced",
+                        backgroundColor: Chart.helpers.color(chartColors[1]).alpha(0.5).rgbString(),
+                        borderColor: chartColors[1],
+                        //fill: false,
+                        yAxisID: 'B',
+                        data: []
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    title:{
+                        display: false,
+                        text:"Chart.js Time Point Data"
+                    },
+                    scales: {
+                        xAxes: [{
+                            type: "time",
+                            display: true,
+                            scaleLabel: {
+                                display: false,
+                                labelString: 'Date'
+                            },
+                            ticks: {
+                                major: {
+                                    fontStyle: "bold",
+                                    fontColor: "#FF0000"
+                                }
+                            }
+                        }],
+                        yAxes: [{
+                            id: 'A',
+                            display: true,
+                            scaleLabel: {
+                                display: false,
+                                labelString: 'Reliability (%)'
+                            },
+                            ticks: {
+                              min: 0,
+                              fontColor: chartColors[0]
+                            }
+                        },{
+                            id: 'B',
+                            position: 'right',
+                            display: true,
+                            scaleLabel: {
+                                display: false,
+                                labelString: 'Blocks Produced'
+                            },
+                            ticks: {
+                              min: 0,
+                              fontColor: chartColors[1]
+                            }
+                        }]
+                    },
+                    tooltips: {
+						position: 'nearest',
+						mode: 'index',
+						intersect: false,
+					}
+
+                }
+            };
+            return config;
+        }
+		
+    }
+});
