@@ -1,4 +1,10 @@
-{
-    "Stake": "幣權",
-    "Recent Reliability": "近期可靠度"
+if(locales==null) {
+  var locales = {};
+}
+locales['zh-TW'] = {
+    dashboard: {
+        "Stake": "幣權",
+        "Recent_Reliability": "近期可靠度"
+    }
+        
 }

@@ -1,3 +1,31 @@
+var languages = ['en', 'zh-TW']
+
+function get_language() {
+    if (navigator.language) {
+        var language = navigator.language;
+    }
+    else {
+        var language = navigator.browserLanguage;
+    }
+    return language;
+}
+
+var language = get_language();
+const i18n = new VueI18n({
+    locale: language, // set locale
+    messages: locales, // set locale messages
+});
+
+new Vue({ i18n }).$mount('#content')
+
+
+
+
+// Create a Vue instance with `i18n` option
+new Vue({ i18n }).$mount('#app')
+
+
+
 
 var initIcon = new Vue({
     el: "img.social-link",
@@ -69,6 +97,7 @@ var copyToClipboard = new Vue({
 
 
 var summry = new Vue({
+    i18n,
     el: "#summry",
     data: {
         stakeTotal: null,
@@ -163,12 +192,6 @@ var summaryChart = new Vue({
                             scaleLabel: {
                                 display: false,
                                 labelString: 'Date'
-                            },
-                            ticks: {
-                                major: {
-                                    fontStyle: "bold",
-                                    fontColor: "#FF0000"
-                                }
                             }
                         }],
                         yAxes: [{

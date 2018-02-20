@@ -1,3 +1,17 @@
+
+@media (max-width: 427px){
+    .hide-at-small{
+        display:none!important;
+    }
+    
+}
+
+@media (min-width: 427px){
+    .hide-at-large{
+        display:none!important;
+    }
+}
+
 .thxmsg {
 	width: 100%;
 	display: none;
@@ -62,7 +76,7 @@ svg.official-logo {
     background-color: #0b1e2c; 
 }
 .w3-bordered tr, .w3-table-all tr {
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid #444;
 }
 
 

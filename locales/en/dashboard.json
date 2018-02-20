@@ -1,4 +1,9 @@
-{
-    "Stake": "Stake",
-    "Recent Reliability": "Recent Reliability"
+if(locales==null) {
+  var locales = {};
+}
+locales['en'] = {
+    dashboard: {
+        "Stake": "Stake",
+        "Recent_Reliability": "Recent Reliability"
+    }    
 }
